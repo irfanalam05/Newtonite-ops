@@ -1,0 +1,38 @@
+{
+  "name": "newtonite-ops",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Newtonite \u2014 Operations Under Pressure",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev:api": "node --watch server/src/server.js",
+    "dev:worker": "node --watch server/src/workers/index.js",
+    "dev:client": "npm run dev -w client",
+    "start:api": "node server/src/server.js",
+    "start:worker": "node server/src/workers/index.js",
+    "db:migrate": "node server/src/db/migrate.js",
+    "db:seed": "node database/seeds/seed.js",
+    "db:reset": "node database/seeds/reset.js",
+    "test": "vitest run",
+    "test:server": "vitest run",
+    "test:client": "npm run test -w client",
+    "test:all": "vitest run && npm run test -w client",
+    "build": "npm run build -w client",
+    "check": "node scripts/static-check.mjs"
+  },
+  "devDependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.7",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.1",
+    "supertest": "^7.0.0",
+    "vitest": "^2.1.8"
+  }
+}

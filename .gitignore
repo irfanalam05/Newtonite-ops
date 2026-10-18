@@ -1,0 +1,11 @@
+node_modules/
+.env
+dist/
+coverage/
+*.log
+.DS_Store
+
+docs/DEMO.md
+docs/REQUIREMENTS_AUDIT.md
+docs/SUBMISSION.md
+docs/VERIFICATION.md
